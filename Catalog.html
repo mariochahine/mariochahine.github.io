@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="catalog.css" />
+
+    <title>Mercedes-Benz Museum</title>
+  </head>
+  <body style="background-image: url(resources/DSC_0319.JPG)">
+    <img src="resources/pngwing.com.png" width="300px" id="pic" />
+    <p id="label"><b>Select The Desired Model</b></p>
+    <div id="modelselect">
+      <select id="select">
+        <option value="a-class">A-class</option>
+        <option value="c-class">C-class</option>
+        <option value="c63-amg">C63-AMG</option>
+        <option value="cl-class">CL-class</option>
+        <option value="cl63-cl65-amg">CL63-CL65-AMG</option>
+        <option value="cla-class">CLA-class</option>
+        <option value="cle-class">CLE-class</option>
+        <option value="clk-class">CLK-class</option>
+        <option value="cls-class">CLS-class</option>
+        <option value="e-class">E-class</option>
+        <option value="e-class-wagon">E-class-Wagon</option>
+        <option value="eqa">EQA</option>
+        <option value="eqb">EQB</option>
+        <option value="eqc">EQC</option>
+        <option value="eqe">EQE</option>
+        <option value="eqe-suv">EQE-SUV</option>
+        <option value="eqg">EQG</option>
+        <option value="eqs">EQS</option>
+        <option value="eqs-suv">EQS-SUV</option>
+        <option value="esprinter">eSprinter</option>
+        <option value="f-cell">F-cell</option>
+        <option value="g-class">G-class</option>
+        <option value="g63-g65-amg">G63 / G65 AMG</option>
+        <option value="gla-class">GLA-class</option>
+        <option value="gla45-amg">GLA45 AMG</option>
+        <option value="glb-class">GLB-class</option>
+        <option value="glc-coupe">GLC Coupe</option>
+        <option value="glc-class">GLC-class</option>
+        <option value="gle-class">GLE-class</option>
+        <option value="glk-class">GLK-class</option>
+        <option value="gls-class">GLS-class</option>
+        <option value="m-class">M-class</option>
+        <option value="metris">Metris</option>
+        <option value="ml63-amg">ML63 AMG</option>
+        <option value="r-class">R-class</option>
+        <option value="s-class">S-class</option>
+        <option value="s63-s65-amg">S63 / S65 AMG</option>
+        <option value="sl-class">SL-class</option>
+        <option value="slc-class">SLC-class</option>
+        <option value="slk-class">SLK-class</option>
+        <option value="slk55-amg">SLK55 AMG</option>
+        <option value="slr-class">SLR-class</option>
+        <option value="sls-amg">SLS AMG</option>
+        <option value="sprinter">Sprinter</option>
+      </select>
+    </div>
+    <div id="buttons">
+      <div class="one-div">
+        <div class="text">
+          <button onclick="Model()" id="btn1">Check Model</button>
+        </div>
+      </div>
+      <div class="one-div">
+        <div class="text">
+          <button onclick="specs()" id="btn2">See Trims and Specs</button>
+        </div>
+      </div>
+    </div>
+    <p id="credit">
+      Powered by<br />
+      <b>CarandDriver.com</b>
+    </p>
+
+    <script>
+      function Model() {
+        var selectedModel = document.getElementById("select").value;
+        var link =
+          "https://www.caranddriver.com/mercedes-benz/" + selectedModel;
+        console.log(link);
+        window.location.href = link;
+      }
+      function specs() {
+        var selectedModel = document.getElementById("select").value;
+        var spec = "/specs";
+        var link =
+          "https://www.caranddriver.com/mercedes-benz/" + selectedModel + spec;
+        console.log(link);
+        window.location.href = link;
+      }
+    </script>
+  </body>
+</html>
