@@ -12,33 +12,43 @@
 
     <title>Mercedes-Benz Museum</title>
   </head>
-  <body style="background-image: url(resources/DSC_0320.jpg); background-size: 115%;">
+  <body
+    style="background-image: url(resources/DSC_0320.jpg); background-size: 115%"
+  >
+    <img
+      src="resources/pngwing.com.png"
+      width="280px"
+      style="padding-left: 145px; padding-top: 20px"
+    />
 
-    <img src="resources/pngwing.com.png" width="280px" style="padding-left: 145px ;padding-top: 20px;" />
-
-    <p style="padding-left: 200px ;font-size: 18px;"><b>You Must Login First</b></p>
+    <p style="padding-left: 200px; font-size: 18px">
+      <b>You Must Login First</b>
+    </p>
 
     <form action="login.php" method="POST">
-      <div style="padding-left: 130px;padding-top: 20px;">
-
+      <div style="padding-left: 130px; padding-top: 20px">
         <div class="container">
-          <input required="" type="text" name="email" class="input">
+          <input required="" type="email" name="email" class="input" />
           <label class="label">Enter Email</label>
         </div>
-        <div><br><br></div>
+        <div><br /><br /></div>
 
         <div class="container">
-          <input required="" type="password" name="password" class="input">
+          <input required="" type="password" name="password" class="input" />
           <label class="label">Password</label>
         </div>
-        <div><br><br></div>
-        
-        <div style="padding-left: 75px;">
+        <div><br /><br /></div>
+
+        <div style="padding-left: 75px">
           <button><a href="login.php"></a>Sign In</button>
         </div>
         <div></div>
-        <a href="signup.html"><p style="padding-left: 70px;color: black;">Not a member? Sign up</p></a>
+        <a href="signup.html"
+          ><p style="padding-left: 70px; color: black">
+            Not a Member? Sign up
+          </p></a
+        >
       </div>
-  </form>    
+    </form>
   </body>
 </html>

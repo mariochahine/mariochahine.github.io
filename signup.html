@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+
+    <title>Mercedes-Benz Museum</title>
+  </head>
+  <body style="background-image: url(resources/DSC_0320.jpg); background-size:115%;">
+
+    <img src="resources/pngwing.com.png" width="250px" style="padding-left: 100px ;padding-top: 10px;" />
+
+    <p style="padding-left: 117px ;font-size: 18px;"><b>Please Fill Your Information</b></p>
+
+    <form action="signup.php" method="POST">
+      <div style="padding-left: 70px;padding-top: 10px;">
+
+        <div class="container">
+            <input required="" type="text" name="Name" class="input">
+            <label class="label">Enter Your Name</label>
+          </div>
+          <div><br><br></div>
+
+          <div class="container">
+            <input required="" type="tel" name="phone" class="input">
+            <label class="label">Phone number</label>
+          </div>
+          <div><br><br></div>
+
+        <div class="container">
+          <input required="" type="email" name="email" class="input">
+          <label class="label">Email</label>
+        </div>
+        <div><br><br></div>
+
+        <div class="container">
+          <input required="" type="password" name="password" minlength="8" maxlength="30" class="input">
+          <label class="label">Password</label>
+        </div>
+        <div><br><br></div>
+        
+        <div class="container">
+            <input required="" type="text" name="Address" class="input">
+            <label class="label">Address</label>
+          </div>
+          <div><br><br></div>
+
+          <div class="container">
+            <input required="" type="number" name="credit" class="input" minlength="16" maxlength="16" pattern="[0-9]{16}">
+            <label class="label">Billing Information</label>
+          </div>
+          <div><br><br></div>
+
+          <div class="container">
+            <input required="" type="number" name="code" class="input" minlength="3" maxlength="3" pattern="[0-9]{3}">
+            <label class="label">Billing code</label>
+          </div>
+          <div><br><br></div>
+        
+        <div style="padding-left: 75px;padding-bottom: 60px;">
+          <button><a href="login.php"></a>Sign Up</button>
+        </div>
+      </div>
+  </form>    
+  </body>
+</html>
