@@ -39,40 +39,24 @@
             <button class="btn" onclick="shop()">Shop A Mercedes</button>
           </div>
 
-          <div style="padding-left: 100px; padding-right: 100px">
+          <!-- <div style="padding-left: 100px; padding-right: 100px">
             <p style="padding-bottom: 10px;">Tack Your Orders</p>
             <button class="btn" onclick="shop()">Check Orders</button>
-          </div>
+          </div> -->
         </div>
       </div>
 
-      <div style="font-size: 18px; font-family: 'Times New Roman', Times, serif; color:white; padding-top: 30px;padding-bottom: 50px" id="ajaxDiv">
+      <div style="padding-top:30px;font-size: 18px; font-family: 'Times New Roman', Times, serif; color:white;" id="ajaxDiv">
       </div>
 
-      <div style="font-size: 18px; font-family: 'Times New Roman', Times, serif; color:white;" id="ajaxDiv2" style="display:inline-flex;">
+      <div style="padding-top:30px;font-size: 18px; font-family: 'Times New Roman', Times, serif; color:white;" id="ajaxDiv2">
       </div>
 
-      <div style="font-size: 18px; font-family: 'Times New Roman', Times, serif; color:white;" id="ajaxDiv3" style="display:inline-flex;">
-        <div style="display:inline-flex;">
-          <div style="padding-left: 75px; padding-right: 75px">
-            <p style="text-decoration: underline;margin-bottom: 10px;">Horsepower &nbsp &nbsp &nbsp</p>
-            <p style="font-size: 16px;font-style:italic;padding-left: 50px;">Horsepower</p>
-          </div>
-          <div style="padding-left: 75px; padding-right: 75px">
-            <p style="text-decoration: underline;margin-bottom: 10px;">Engine &nbsp &nbsp &nbsp</p>
-            <p style="font-size: 16px;font-style:italic;padding-left: 50px;">Horsepower</p>
-          </div>
-          <div style="padding-left: 75px; padding-right: 75px">
-            <p style="text-decoration: underline;margin-bottom: 10px;">Type &nbsp &nbsp &nbsp</p>
-            <p style="font-size: 16px;font-style:italic;padding-left: 50px;">Horsepower</p>
-          </div>
-          <div style="padding-left: 100px; padding-right: 100px">
-            <button class="btn" onclick="shop()">Place Orders</button>
-          </div>
-        </div>
+      <div style="padding-top:30px;padding-bottom: 30px;font-size: 18px; font-family: 'Times New Roman', Times, serif; color:white;" id="ajaxDiv3">
       </div>
+  </div>
 
-    </center>
+  </center>
   </div>
 </body>
 
@@ -128,7 +112,7 @@
         document.getElementById("ajaxDiv2").innerHTML = "";
       }
     }
-    ajaxRequest.open("GET", "update.php?name=" + name + ",phone=" + Numb + ",email=" + Email + ",pass=" + Pass + ",address=" + Address + ",card=" + BillInfo + ",code=" + code, true);
+    ajaxRequest.open("GET", "update.php?name=" + name + "&phone=" + Numb + "&email=" + Email + "&pass=" + Pass + "&address=" + Address + "&card=" + BillInfo + "&code=" + code, true);
     ajaxRequest.send();
 
     console.log(name);
@@ -186,7 +170,7 @@
       }
     }
 
-    ajaxRequest.open("GET", "Order.php?trim=" + encodeURIComponent(Trimvalue), ",model=" + encodeURIComponent(Modelvalue), true);
+    ajaxRequest.open("GET", "Order.php?trim=" + encodeURIComponent(Trimvalue) + "&model=" + encodeURIComponent(Modelvalue), true);
     ajaxRequest.send();
   }
 

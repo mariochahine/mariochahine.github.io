@@ -8,7 +8,7 @@ $model = $_GET['model'];
 $query = "SELECT * FROM trims INNER JOIN models ON trims.model_id = models.id WHERE models.Model = '$model'";
 $ress = mysqli_query($conn, $query);
 
-echo "<div style=\"display:inline-flex;\">";
+echo "<div style=\"display:inline-flex;padding-top: 30px;\" id=\"trimdiv\">";
 
 echo "<div style=\"padding-top: 30px;padding-left: 100px;\">";
 echo "<p id=\"label\"><b>Select The Desired Trim</b></p>";

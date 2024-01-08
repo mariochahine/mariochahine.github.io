@@ -3,28 +3,34 @@
 include 'connection.php';
 
 $model = $_GET['model'];
+$trim = $_GET['trim'];
 
-$query = "SELECT * FROM trims INNER JOIN models ON trims.model_id = models.id WHERE models.Model = '$model'";
+$query = "SELECT * FROM trims INNER JOIN models ON trims.model_id = models.id WHERE models.Model = '$model' AND trims.Trim='$trim'";
 $ress = mysqli_query($conn, $query);
 
-echo "<div style=\"display:inline-flex;\">";
-
-echo "<div style=\"padding-top: 30px;padding-left: 100px;\">";
-echo "<p id=\"label\"><b>Select The Desired Trim</b></p>";
-echo "<div id=\"modelSelect\">";
-echo "<select id=\"Select\" style=\"height: 30px\">";
-echo "<option value=0>Select Trim</option>";
-
 while ($row = mysqli_fetch_assoc($ress)) {
-    echo "<option value=" . $row['Trim'] . ">" . $row['Trim'] . "</option>";
+    echo '<div style="display:inline-flex;padding-top: 30px;" id=\"orderdiv\">';
+
+    echo '<div style="padding-left: 75px; padding-right: 75px">';
+    echo '<p style="text-decoration: underline;margin-bottom: 10px;">Horsepower &nbsp &nbsp &nbsp &nbsp</p>';
+    echo '<p style="font-size: 16px;font-style:italic;padding-left: 50px;">' . $row['Horsepower'] . ' HP</p>';
+    echo '</div>';
+
+    echo '<div style="padding-left: 75px; padding-right: 75px">';
+    echo '<p style="text-decoration: underline;margin-bottom: 10px;">Engine &nbsp &nbsp &nbsp &nbsp</p>';
+    echo '<p style="font-size: 16px;font-style:italic;padding-left: 50px;">Mercedes ' . $row['Engine'] . '</p>';
+    echo '</div>';
+
+    echo '<div style="padding-left: 75px; padding-right: 75px">';
+    echo '<p style="text-decoration: underline;margin-bottom: 10px;">Type &nbsp &nbsp &nbsp &nbsp</p>';
+    echo '<p style="font-size: 16px;font-style:italic;padding-left: 50px;">' . $row['Type'] . '</p>';
+    echo '</div>';
+
+    echo '<div style="padding-left: 100px; padding-right: 100px">';
+    echo '<button class="btn" onclick="PlaceOrder()">Place Order</button>';
+    echo '</div>';
+
+    echo '</div>';
 }
-echo "</select>";
-echo "</div>";
-echo "</div>";
 
-echo "<div >";
-echo "<img src=\"Gallery/Models/$model.png\" style=\"padding-left: 100px;\" width=\"300px\">";
-echo "</div>";
-
-echo "</div>";
 ?>
