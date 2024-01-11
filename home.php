@@ -67,19 +67,14 @@
     ajaxRequest.onreadystatechange = function() {
       if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200) {
         document.getElementById("ajaxDiv").innerHTML = ajaxRequest.responseText;
+        document.getElementById("ajaxDiv2").innerHTML = "";
+        document.getElementById("ajaxDiv3").innerHTML = "";
       }
     }
 
     ajaxRequest.open("GET", "listdetails.php", true);
     ajaxRequest.send();
 
-    // let name = document.getElementById("name").value;
-    // let Numb = document.getElementById("PhoneNumb").value;
-    // let Email = document.getElementById("email").value;
-    // let Pass = document.getElementById("pass").value;
-    // let Address = document.getElementById("Address").value;
-    // let BillInfo = document.getElementById("BillInfo").value;
-    // let code = document.getElementById("code").value;
   }
 
   function Edit() {
@@ -97,13 +92,13 @@
 
   function Update() {
 
-    let name = document.getElementsByName("Name").value;
-    let Numb = document.getElementsByName("Phone").value;
-    let Email = document.getElementsByName("Email").value;
-    let Pass = document.getElementsByName("Pass").value;
-    let Address = document.getElementsByName("address").value;
-    let BillInfo = document.getElementsByName("CardNumb").value;
-    let code = document.getElementsByName("Code").value;
+    let name = document.getElementsByName("Name")[0].value;
+    let Numb = document.getElementsByName("Phone")[0].value;
+    let Email = document.getElementsByName("Email")[0].value;
+    let Pass = document.getElementsByName("Pass")[0].value;
+    let Address = document.getElementsByName("address")[0].value;
+    let BillInfo = document.getElementsByName("CardNumb")[0].value;
+    let code = document.getElementsByName("Code")[0].value;
 
     let ajaxRequest = new XMLHttpRequest();
     ajaxRequest.onreadystatechange = function() {
@@ -112,8 +107,6 @@
         document.getElementById("ajaxDiv2").innerHTML = "";
       }
     }
-    ajaxRequest.open("GET", "update.php?name=" + name + "&phone=" + Numb + "&email=" + Email + "&pass=" + Pass + "&address=" + Address + "&card=" + BillInfo + "&code=" + code, true);
-    ajaxRequest.send();
 
     console.log(name);
     console.log(Numb);
@@ -123,6 +116,13 @@
     console.log(BillInfo);
     console.log(code);
 
+    
+    let url = "update.php?name=" + encodeURIComponent(name) + "&phone=" + encodeURIComponent(Numb) + "&email=" + Email + "&pass=" + encodeURIComponent(Pass) + "&address=" + encodeURIComponent(Address) + "&card=" + encodeURIComponent(BillInfo) + "&code=" + encodeURIComponent(code);
+    console.log(url);
+    ajaxRequest.open("GET", url, true);
+    ajaxRequest.send();
+    console.log(ajaxRequest.responseText);
+
   }
 
   function shop() {
@@ -131,6 +131,8 @@
       if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200) {
         document.getElementById("ajaxDiv").innerHTML = ajaxRequest.responseText;
         document.getElementById("ajaxDiv2").innerHTML = "";
+        document.getElementById("ajaxDiv3").innerHTML = "";
+
       }
     }
 
@@ -148,6 +150,7 @@
     ajaxRequest.onreadystatechange = function() {
       if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200) {
         document.getElementById("ajaxDiv2").innerHTML = ajaxRequest.responseText;
+        document.getElementById("ajaxDiv3").innerHTML = "";
       }
     }
 
@@ -175,6 +178,27 @@
   }
 
   function PlaceOrder() {
+
+    var model = document.getElementById("select");
+    var Modelvalue = model.value;
+
+    var Trim = document.getElementById("Select");
+    var Trimvalue = Trim.value;
+
+    let ajaxRequest = new XMLHttpRequest();
+    ajaxRequest.onreadystatechange = function() {
+      if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200) {
+        document.getElementById("ajaxDiv").innerHTML = "Thank You For Your Order";
+        document.getElementById("ajaxDiv2").innerHTML = "";
+        document.getElementById("ajaxDiv3").innerHTML = "";
+
+      }
+    }
+    
+    let url2 = "insertorder.php?trim=" + encodeURIComponent(Trimvalue) + "&model=" + encodeURIComponent(Modelvalue);
+    console.log(url2);
+    ajaxRequest.open("GET", url2 , true);
+    ajaxRequest.send();
 
   }
 </script>

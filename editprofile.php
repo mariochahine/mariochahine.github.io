@@ -33,11 +33,11 @@ while ($row = mysqli_fetch_assoc($ress)) {
     echo "<div style=\"font-size: 18px; font-family: 'Times New Roman', Times, serif; color:white; padding-top: 30px; display:inline-flex;\">";
 
     echo "<div style=\"padding-left: 50px; padding-right: 60px;\">";
-    echo "<input type=\"number\" name=\"CardNumb\" class=\"input\" placeholder=\"Billing Info\" id=\"long\" value=\"" . $row['BillingInfo'] . "\">";
+    echo "<input type=\"number\" name=\"CardNumb\" class=\"input\" placeholder=\"Billing Info\" width=\"350px\" value=\"" . $row['BillingInfo'] . "\">";
     echo "</div>";
 
     echo "<div style=\"padding-left: 60px; padding-right: 50px;\">";
-    echo "<input type=\"text\" name=\"address\" class=\"input\" placeholder=\"Shipping Address\" id=\"long\" value=\"" . $row['Address'] . "\">";
+    echo "<input type=\"text\" name=\"address\" class=\"input\" placeholder=\"Shipping Address\" width=\"350px\" value=\"" . $row['Address'] . "\">";
     echo "</div>";
     echo "</div>";
 
@@ -54,7 +54,7 @@ while ($row = mysqli_fetch_assoc($ress)) {
     echo "</div>";
 
 
-    echo "<div style=\"padding-top: 30px;padding-bottom: 40px\">";
+    echo "<div style=\"padding-top: 30px;\">";
     echo "<button class='btn' onclick='Update()'>Update</button>";
     echo "</div>";
 }
